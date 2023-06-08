@@ -1,5 +1,5 @@
 import { createSelector } from '@ngrx/store';
-import { AppStateInterface } from 'src/app/models/@interfaces/appState.interface';
+import { AppStateInterface } from '../models/@interfaces';
 
 export const selectFeature = (state: AppStateInterface) => state.posts;
 // create loading selector

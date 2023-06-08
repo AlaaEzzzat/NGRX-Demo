@@ -3,9 +3,8 @@ import { NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { PostsComponent } from './components/posts/posts.component';
-import { PostsService } from './services/posts.service';
-import { PostsEffects } from './store/effects';
-import { reducers } from './store/reducers';
+import { PostsEffects, reducers } from 'src/app/@core/@store';
+import { PostsService } from 'src/app/@core/models/@services';
 
 @NgModule({
   imports: [
