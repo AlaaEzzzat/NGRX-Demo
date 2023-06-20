@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { PostInterface } from '../models/@interfaces';
+import { PostInterface } from '../../models/@interfaces';
 
 // Create actions you need
 export const getPosts = createAction('[Posts] Get Posts');

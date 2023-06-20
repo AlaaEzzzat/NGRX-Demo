@@ -1,0 +1,14 @@
+<div class="container-fluid p-3" *ngIf="employees$ | async as employees">
+  <h1>Welcome From All Employees</h1>
+  <div class="row pb-3">
+    <ng-container *ngFor="let employee of employees">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <app-employee-card
+          [allEmployee]="employees"
+          [employee]="employee"
+        ></app-employee-card>
+      </div>
+    </ng-container>
+  </div>
+  <app-add-employee [allEmployee]="employees"></app-add-employee>
+</div>

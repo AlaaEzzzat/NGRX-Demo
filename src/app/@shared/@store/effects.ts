@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, map, mergeMap, of } from 'rxjs';
 import { PostsService } from '../../@core/@services/posts.service';
-import * as PostsActions from './actions';
+import * as PostsActions from '../../@core/@store';
 
 @Injectable()
 export class PostsEffects {

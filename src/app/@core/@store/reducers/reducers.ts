@@ -1,11 +1,11 @@
 import { createReducer, on } from '@ngrx/store';
-import * as PostsActions from './actions';
-import { PostsStateInterface } from '../models/@interfaces';
+import * as PostsActions from '../actions/actions';
+import { EmployeeInterface } from '../../models/@interfaces/employees.interface';
 
 // Create initial state
-export const initialState: PostsStateInterface = {
+export const initialState: EmployeeInterface = {
   isLoading: false,
-  posts: [],
+  employees: [],
   error: null,
 };
 
