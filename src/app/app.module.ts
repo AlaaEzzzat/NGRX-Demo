@@ -9,7 +9,6 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { AppComponent } from './@block/@root/app.component';
-import { PostsModule } from './features/posts/posts.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +17,6 @@ import { PostsModule } from './features/posts/posts.module';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    PostsModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot(),
     StoreDevtoolsModule.instrument({

@@ -1,0 +1,43 @@
+h3 {
+  color: #fff !important;
+}
+.card {
+  max-width: 21rem;
+  padding: 20px;
+  .button-wrapper {
+    margin-top: 18px;
+  }
+
+  .btn + .btn {
+    margin-left: 10px;
+  }
+
+  .outline {
+    background: transparent;
+    color: rgba(0, 212, 255, 0.9);
+    border: 1px solid rgba(0, 212, 255, 0.6);
+    transition: all 0.5s ease;
+  }
+
+  .outline:hover {
+    transform: scale(1.125);
+    transition: all 0.5s ease;
+    color: rgba(255, 255, 255, 0.9);
+    color: black;
+  }
+
+  .fill {
+    background: rgba(0, 212, 255, 0.9);
+    color: rgba(255, 255, 255, 0.95);
+    filter: drop-shadow(0);
+    font-weight: bold;
+    transition: all 0.5s ease;
+  }
+
+  .fill:hover {
+    transform: scale(1.125);
+    color: black;
+    filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.125));
+    transition: all 0.5s ease;
+  }
+}

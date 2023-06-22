@@ -1,1 +1,7 @@
-<router-outlet></router-outlet>
+<router-outlet *ngIf="!(isLoading$ | async)"></router-outlet>
+<div
+  class="d-flex justify-content-center align-items-center w-100 vh-100"
+  *ngIf="isLoading$ | async"
+>
+  <div class="lds-hourglass"></div>
+</div>

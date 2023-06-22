@@ -4,4 +4,5 @@ export interface EmployeeInterface {
   isLoading: boolean;
   employees: IEmployee[];
   error: string | null;
+  selectedEmployee?: IEmployee;
 }

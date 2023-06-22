@@ -1,22 +1,33 @@
 <div class="card mb-2">
-    <div class="card-body">
-      <h5 class="card-title">{{employee.name}}</h5>
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">
-        <span>Age : </span>
-        <span>{{employee.age}}</span>
-      </li>
-      <li class="list-group-item">
-        <span>B.O.D : </span>
-        <span>{{employee.birthOfDate | date}}</span>
-      </li>
-      <li class="list-group-item">       <span>Address : </span>
-        <span>{{employee.address }}</span></li>
-    </ul>
-    <div class="card-body p-1 d-flex justify-content-between">
-      <button class="btn btn-primary" (click)="goToUpdate(employee.id)">Update</button>
-      <button class="btn btn-primary" (click)="deleteEmployee(employee.id)">Delete</button>
-      <button [hidden]="page=='show'" class="btn btn-primary" (click)="goToDetails(employee.id)">Show</button>
-    </div>
+  <div class="card-body">
+    <h4 class="card-title text-center">{{ employee.name }}</h4>
   </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <span>Age : </span>
+      <span>{{ employee.age }}</span>
+    </li>
+    <li class="list-group-item">
+      <span>B.O.D : </span>
+      <span>{{ employee.birthOfDate | date }}</span>
+    </li>
+    <li class="list-group-item">
+      <span>Address : </span> <span>{{ employee.address }}</span>
+    </li>
+  </ul>
+  <div class="button-wrapper p-1 d-flex flex-wrap justify-content-between">
+    <button class="btn outline mb-2" (click)="goToUpdate(employee.id)">
+      Update
+    </button>
+    <button class="btn fill mb-2" (click)="deleteEmployee(employee.id)">
+      Delete X
+    </button>
+    <button
+      [hidden]="page == 'show'"
+      class="btn outline mb-2"
+      (click)="goToDetails(employee.id)"
+    >
+      Show
+    </button>
+  </div>
+</div>

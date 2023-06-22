@@ -1,4 +1,4 @@
-<div class="details">
-  <h1>All Empolyee Information</h1>
-  <!-- <app-employee-card [employee]="employee" page="show"></app-employee-card> -->
+<div class="details" *ngIf="employee$ | async as employee">
+  <h3 class="text-white">{{ employee.name }} Information</h3>
+  <app-employee-card [employee]="employee" page="show"></app-employee-card>
 </div>
