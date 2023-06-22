@@ -23,7 +23,9 @@ export class EmployeeCardComponent implements OnInit {
     this.router.navigate(['/employee/add', id]);
   }
   deleteEmployee(id: number) {
-    this.store.dispatch(EmpoleeActions.deleteEmployee({ id }));
+    this.store.dispatch(
+      EmpoleeActions.deleteEmployeeActions.deleteEmployee({ id })
+    );
   }
   goToDetails(id: number) {
     this.router.navigate(['/employee/details', id]);

@@ -29,6 +29,8 @@ export class EmployeeDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.currEmployeeId;
-    this.store.dispatch(EmployeesActions.getEmployeeById({ id }));
+    this.store.dispatch(
+      EmployeesActions.getEmployeeByIdActions.getEmployeeById({ id })
+    );
   }
 }

@@ -18,14 +18,20 @@ export class EmployeesEffects {
   ) {}
   getEmployees$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(EmployeesAction.getAllEmployees),
+      ofType(EmployeesAction.getEmployeesActions.getAllEmployees),
       mergeMap(() => {
         return this.employeesService.getAllEmployees().pipe(
           map((employees: IEmployee[]) =>
-            EmployeesAction.getEmployeesSuccess({ employees })
+            EmployeesAction.getEmployeesActions.getEmployeesSuccess({
+              employees,
+            })
           ),
           catchError((error) =>
-            of(EmployeesAction.getEmployeesFailure({ error: error.message }))
+            of(
+              EmployeesAction.getEmployeesActions.getEmployeesFailure({
+                error: error.message,
+              })
+            )
           )
         );
       })
@@ -35,14 +41,18 @@ export class EmployeesEffects {
   // Add Employee
   addEmployee$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(EmployeesAction.addEmployee),
+      ofType(EmployeesAction.addEmployeeActions.addEmployee),
       concatMap(({ employee }) =>
         this.employeesService.addEmployee(employee).pipe(
           map((employee: IEmployee) =>
-            EmployeesAction.addEmployeeSuccess({ employee })
+            EmployeesAction.addEmployeeActions.addEmployeeSuccess({ employee })
           ),
           catchError((error) =>
-            of(EmployeesAction.addEmployeeFailure({ error: error.message }))
+            of(
+              EmployeesAction.addEmployeeActions.addEmployeeFailure({
+                error: error.message,
+              })
+            )
           )
         )
       )
@@ -52,15 +62,21 @@ export class EmployeesEffects {
   //Update employee
   updateEmployee$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(EmployeesAction.updateEmployee),
+      ofType(EmployeesAction.updateEmployeeActions.updateEmployee),
       concatMap(({ employee }) =>
         this.employeesService.updateEmployee(employee).pipe(
           tap(() => this.__router.navigate(['employee/home'])),
           map((employee: IEmployee) =>
-            EmployeesAction.updateEmployeeSuccess({ employee })
+            EmployeesAction.updateEmployeeActions.updateEmployeeSuccess({
+              employee,
+            })
           ),
           catchError((error) =>
-            of(EmployeesAction.addEmployeeFailure({ error: error.message }))
+            of(
+              EmployeesAction.addEmployeeActions.addEmployeeFailure({
+                error: error.message,
+              })
+            )
           )
         )
       )
@@ -69,7 +85,7 @@ export class EmployeesEffects {
   deleteEmployee$ = createEffect(
     () =>
       this.actions$.pipe(
-        ofType(EmployeesAction.deleteEmployee),
+        ofType(EmployeesAction.deleteEmployeeActions.deleteEmployee),
         concatMap(({ id }) =>
           this.employeesService
             .deleteEmployee(id)

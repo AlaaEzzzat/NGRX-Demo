@@ -18,6 +18,6 @@ export class EmployeeLayoutComponent implements OnInit {
 
   ngOnInit(): void {
     // dispatch event to get Employees from backend
-    this.store.dispatch(EmployeeAction.getAllEmployees());
+    this.store.dispatch(EmployeeAction.getEmployeesActions.getAllEmployees());
   }
 }

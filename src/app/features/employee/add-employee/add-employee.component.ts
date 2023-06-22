@@ -9,8 +9,8 @@ import * as EmployeesActions from '../../../@core/@store';
 import { Observable } from 'rxjs';
 import {
   getSelectedEmployee,
-  addEmployee,
-  updateEmployee,
+  addEmployeeActions,
+  updateEmployeeActions,
 } from 'src/app/@core/@store';
 @Component({
   selector: 'app-add-employee',
@@ -73,16 +73,22 @@ export class AddEmployeeComponent implements OnInit {
     this.method == 'Add' ? this.addEmployee() : this.updateEmployee();
   }
   addEmployee() {
-    this.store.dispatch(addEmployee({ employee: this.employee }));
+    this.store.dispatch(
+      addEmployeeActions.addEmployee({ employee: this.employee })
+    );
   }
   updateEmployee() {
-    this.store.dispatch(updateEmployee({ employee: this.employee }));
+    this.store.dispatch(
+      updateEmployeeActions.updateEmployee({ employee: this.employee })
+    );
   }
   ngOnInit(): void {
     if (this.currEmployeeId != 0) {
       this.method = 'Update';
       const id = this.currEmployeeId;
-      this.store.dispatch(EmployeesActions.getEmployeeById({ id }));
+      this.store.dispatch(
+        EmployeesActions.getEmployeeByIdActions.getEmployeeById({ id })
+      );
       this.employee$.subscribe((data: IEmployee) => {
         this.employee = data;
         this.__form.patchValue(this.employee);
